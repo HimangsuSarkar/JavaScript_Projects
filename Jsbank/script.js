@@ -63,6 +63,8 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 //working star from here
 const displayMovements = function (movements) {
+containerMovements.innerHTML='';
+
   movements.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
     const html = `<div class="movements__row">
@@ -71,6 +73,7 @@ const displayMovements = function (movements) {
         </div>
    
     `;
+    containerMovements.insertAdjacentHTML("afterbegin", html);
   });
   // console.log(movements);
 };
